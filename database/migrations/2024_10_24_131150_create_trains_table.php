@@ -24,7 +24,7 @@ return new class extends Migration
                 //Orario di arrivo
                 $table->time('arr_time');
                 //Codice Treno
-                $table->string('code',16)->nullable();
+                $table->string('code',6)->nullable();
                 //Numero Carrozze
                 $table->time('carriages_number')->nullable();
                 //In orario

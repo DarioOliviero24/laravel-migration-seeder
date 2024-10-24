@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+//Models
+use App\Models\Train;
+
 class TrainSeeder extends Seeder
 {
     /**
@@ -12,6 +15,20 @@ class TrainSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+       Train::truncate();
+
+       for ($i = 0; $i < 10; $i++){
+        $train = new Train();
+        $train->code = fake()->botifhy('?#??##');
+        $train->company = fake()->company();
+        $train->dep_station = fake()->city();
+        $train->arr_station = fake()->city();
+        $train->dep_time = fake()->time();
+        $train->arr_time = fake()->time();
+        $train->carriages_number = rand(1,10);
+        $train->on_time = fake()->boolean(70);
+        $train->canceled = fake()->boolean(30);
+        $train->save();
+       }
     }
 }
