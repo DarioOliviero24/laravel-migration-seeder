@@ -23,8 +23,8 @@ return new class extends Migration
                 $table->time('dep_time');
                 //Orario di arrivo
                 $table->time('arr_time');
-               //Codice Treno
-                // -
+                //Codice Treno
+                $table->string('code',16)->nullable();
                 //Numero Carrozze
                 $table->time('carriages_number')->nullable();
                 //In orario
